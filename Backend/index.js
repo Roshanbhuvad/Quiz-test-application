@@ -4,14 +4,19 @@ import path from "path";
 import fallback from "express-history-api-fallback";
 import devConfig from "./config/setup/dev";
 import prodConfig from "./config/setup/prod";
-import { NODE_ENV, PORT } from "./config/env";
+import {
+  NODE_ENV,
+  PORT
+} from "./config/env";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import session from "express-session";
 import cookieParser from "cookie-parser";
 import passport from "passport";
 import mongoose from "mongoose";
-dotenv.config({ silent: true });
+dotenv.config({
+  silent: true
+});
 
 const url = process.env.MONGO_HOST;
 const secretString = process.env.SECRET_STRING;
@@ -27,7 +32,9 @@ if (NODE_ENV === "development") {
   prodConfig(app);
 }
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(bodyParser.json());
 
 mongoose.Promise = global.Promise;
