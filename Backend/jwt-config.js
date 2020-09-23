@@ -1,5 +1,5 @@
-import uuid from "uuid-v4"
+const uuid =require("uuid-v4")
 
 const secret = uuid();
 
-export default secret;
+module.exports= secret;

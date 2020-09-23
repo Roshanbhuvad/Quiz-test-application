@@ -1,5 +1,5 @@
-import compression from "compression";
+const compression = require("compression");
 
-export default (app) => {
+(app) => {
   app.use(compression());
 };

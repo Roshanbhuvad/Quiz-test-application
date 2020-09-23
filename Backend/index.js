@@ -1,19 +1,18 @@
-import express from "express";
-import assert from "assert";
-import path from "path";
-import fallback from "express-history-api-fallback";
-import devConfig from "./config/setup/dev";
-import prodConfig from "./config/setup/prod";
-import {
-  NODE_ENV,
-  PORT
-} from "./config/env";
-import bodyParser from "body-parser";
-import dotenv from "dotenv";
-import session from "express-session";
-import cookieParser from "cookie-parser";
-import passport from "passport";
-import mongoose from "mongoose";
+const express = require("express");
+const assert = require("assert");
+const path = require("path");
+const fallback = require("express-history-api-fallback");
+const devConfig = require("./config/setup/dev");
+const prodConfig = require("./config/setup/prod");
+const {
+  NODE_ENV
+} = require("./config/env");
+const bodyParser = require("body-parser");
+const dotenv = require("dotenv");
+const session = require("express-session");
+const cookieParser = require("cookie-parser");
+const passport = require("passport");
+const mongoose = require("mongoose");
 dotenv.config({
   silent: true
 });
@@ -21,16 +20,16 @@ dotenv.config({
 const url = process.env.MONGO_HOST;
 const secretString = process.env.SECRET_STRING;
 
-import apiRoutes from "./routes/api-routes";
-import passportRoutes from "./routes/passport";
-
+const apiRoutes = require("./routes/api-routes");
+const passportRoutes = require("./routes/passport");
+const PORT =8000;
 const app = express();
 
 if (NODE_ENV === "development") {
   devConfig(app);
-} else {
+} /* else {
   prodConfig(app);
-}
+} */
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -77,4 +76,4 @@ app.listen(PORT, (err) => {
   );
 });
 
-export default app;
+module.exports = app;

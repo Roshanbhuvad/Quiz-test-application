@@ -1,11 +1,11 @@
-import express from "express";
-import passport from "passport"
-import GitHubStrategy from "passport-github2"
-import TwitterStrategy from "passport-twitter"
-import jwt from "jsonwebtoken"
-import secret from "../jwt-config"
+const express = require("express");
+const passport = require("passport");
+const GitHubStrategy = require("passport-github2");
+const TwitterStrategy = require("passport-twitter");
+const jwt = require("jsonwebtoken")
+const secret = require("../jwt-config")
 
-import User from "../models/users"
+const User = require("../models/users")
 
 const app = module.exports = express.Router();
 

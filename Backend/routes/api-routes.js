@@ -1,14 +1,14 @@
-import express from "express"
-import mongoose from "mongoose"
-import bodyParser from "body-parser"
-import jwt from "jsonwebtoken"
-import secret from "../jwt-config"
-import uuid from "uuid-v4"
-import dotenv from "dotenv"
+const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser =require("body-parser");
+const jwt = require("jsonwebtoken");
+const secret = require("../jwt-config");
+const uuid = require("uuid-v4")
+const dotenv = require("dotenv")
 dotenv.config();
 
-import Quiz from "../models/quiz"
-import Leaderboard from "../models/leaderboard"
+const Quiz = require("../models/quiz")
+const Leaderboard = require("../models/leaderboard")
 
 const app = module.exports = express.Router();
 
