@@ -1,4 +1,4 @@
-export default (app) => {
+/*export default (app) => {
     const webpackConfig = require("../../../../../webpack.config");
     const webpack = require("webpack")
 
@@ -10,4 +10,4 @@ export default (app) => {
     }));
 
     app.use(require("webpack-hot-middleware")(compiler));
-};
+}; */
