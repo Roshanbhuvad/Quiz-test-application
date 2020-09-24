@@ -46,12 +46,12 @@ passport.use(new GitHubStrategy({
     }
 ));
 
-app.get("/auth/github", passport.authenticate("github"));
+app.get("/auth/github", passport.authenticate("github",{scope:["user:email"]}));
 
 // github callback
 
 app.get("/auth/github/callback", passport.authenticate("github", {
-        failureRedirect: "/login"
+        successRedurect:"/account", failureRedirect: "/"
     }),
     function (req, res) {
         res.redirect("/account");
@@ -70,7 +70,7 @@ app.post("/verify", function (req, res) {
 
 // handle logout in passport
 
-app.get("/logout", function (req, res) {
+app.get("/auth/logout", function (req, res) {
     req.logout();
     res.redirect("/")
 });

@@ -4,7 +4,7 @@ import {
 } from "react-redux";
 import PropTypes from 'prop-types';
 import { createBrowserHistory } from 'history'
-import {
+import { Router,
     Link, BrowserRouter
 } from "react-router-dom"
 

@@ -35,6 +35,7 @@ export default class Study extends React.Component {
 		const currentQuestion = quiz.questions[index];
 		const percentage = this.state.score / this.props.quiz.questions.length;
 		return (
+			<>
 			<div className = 'studyWrapper'>
 				<div className = 'studyContainer'>
 					<h1 className = 'quizTitle'>{this.props.quiz.title}</h1>
@@ -122,7 +123,7 @@ export default class Study extends React.Component {
 
 				</div>
 			</div>
-			
+		</>
 		);
 	}
 };

@@ -17,8 +17,8 @@ connect(
 	})
 )
 class Quiz extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			session: false,
 			selectedQuiz: '',
@@ -88,15 +88,17 @@ class Quiz extends React.Component {
 			return (
 				<div className = 'studyComponent'>
 					<h1>Select a Quiz to Study</h1>
-					<p>All the quizzes uploaded by users are available here:</p>
-					<select onChange = {this.selectQuiz.bind(this)} value = {this.state.selectedQuiz}>
-						{this.props.quizzes.map( (quiz, idx) => {
+					<p>All the quiz uploaded by users are available here:</p>
+					<select onChange = {this.selectQuiz.bind(this)} value = {this.state.selectQuiz}>
+						{this.props.quizzes.map((quiz, idx) => {
 							return (
-								<option
-									value = {quiz.id}
-									key = {idx} >
-									{quiz.title}
-								</option>
+								<div>
+									<option
+										value = {quiz.id}
+										key = {idx} >
+										{quiz.title}
+									</option>
+								</div>
 							);
 						}) }
 					</select>

@@ -59,15 +59,15 @@ app.use(passport.session());
 passport.serializeUser(function (user, done) {
   done(null, user);
 });
-passport.deserializeUser(function (user, done) {
-  done(null, user);
+passport.deserializeUser(function (obj, done) {
+  done(null, obj);
 });
 
 // connect authentication and api routes
 app.use(passportRoutes);
 app.use(apiRoutes);
 
-//app.use(fallback(path.join(__dirname, "../../dist/client/index.html")));
+
 
 app.listen(PORT, (err) => {
   if (err) throw err;
