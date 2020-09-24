@@ -25,10 +25,7 @@ class App extends React.Component {
       </div>
     )
   }
-  componentDidMount() {
-    this.props.getQuizzes();
-    this.props.getLeaders();
-  }
+ 
 }
 
 export default App;
